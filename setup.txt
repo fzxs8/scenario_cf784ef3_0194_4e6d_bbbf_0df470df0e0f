@@ -14,6 +14,3 @@ include_once platforms/facility/airbase.txt
 
 # Sensor Definitions
 include_once sensors/aesa_radar.txt
-
-# Weapon Definitions
-include_once weapons/medium_range_aam.txt

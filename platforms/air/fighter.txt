@@ -36,10 +36,6 @@ platform_type FIGHTER WSF_PLATFORM
       on
    end_sensor
 
-   weapon mram MRM_AAM
-      quantity 4
-   end_weapon
-
    processor track_manager WSF_TRACK_PROCESSOR
       purge_interval  60 sec
       update_interval 1 sec

@@ -59,7 +59,17 @@ end_radar_signature
 
 目标环境连续报告同一个文件同一行错误，而当前主加载链已经不再 include 该文件。为避免任何外部启动器、索引器或旧脚本仍按文件名扫描/读取它，本次直接从仓库删除 `platforms/common.txt`，并同步从 `index.md` 移除该文件索引。
 
-现在 `fighter_rcs` 定义只存在于 `platforms/air/fighter.txt`，主加载链为：`setup.txt` -> `platforms/air/fighter.txt` / `platforms/facility/airbase.txt` / sensors / weapons。若实际运行仍报 `/home/fzxs/.../platforms/common.txt`，则说明运行目录没有更新到本次提交，或启动器读取的是另一个副本，而不是当前仓库内容。
+现在 `fighter_rcs` 定义只存在于 `platforms/air/fighter.txt`，主加载链为：`setup.txt` -> `platforms/air/fighter.txt` / `platforms/facility/airbase.txt` / sensors。若实际运行仍报 `/home/fzxs/.../platforms/common.txt`，则说明运行目录没有更新到本次提交，或启动器读取的是另一个副本，而不是当前仓库内容。
+
+## 本次第五次修正：绕开无效武器模型 `WSF_AAM_WEAPON`
+
+新的实测错误是 `weapons/medium_range_aam.txt` 第 5 行找不到 `WSF_AAM_WEAPON`。这说明目标 AFSIM 2.9 环境没有名为 `WSF_AAM_WEAPON` 的武器模型，或该模型不是当前安装包可用插件。为了先解决空地球并让设施、平台、航线、区域加载，本次将武器定义从最小显示加载链中移除：
+
+1. 已从 `setup.txt` 删除 `include_once weapons/medium_range_aam.txt`。
+2. 已从 `platforms/air/fighter.txt` 删除引用 `MRM_AAM` 的武器挂载块，避免平台类型引用一个未加载/不可用的武器定义。
+3. 已从 `index.md` 移除该武器文件的 include 索引。
+
+注意：`phases.json` 中仍有“发射中距空空导弹”的阶段语义，后续应使用目标 AFSIM 2.9 实际支持的 `WSF_EXPLICIT_WEAPON` / `WSF_IMPLICIT_WEAPON` 或现场插件模型重新实现；但在最小显示验证阶段，不应让武器模型阻断平台、设施、航线和区域显示。
 
 ## 本次环境限制
 

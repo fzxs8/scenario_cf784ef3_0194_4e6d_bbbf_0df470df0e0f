@@ -36,7 +36,6 @@
 | platforms/air/fighter.txt | 战斗机类型 | include_once |
 | platforms/facility/airbase.txt | 机场类型 | include_once |
 | sensors/aesa_radar.txt | AESA雷达 | include_once |
-| weapons/medium_range_aam.txt | 中距空空导弹 | include_once |
 | scenarios/laydown_red.txt | 红方部署 | include |
 | scenarios/laydown_blue.txt | 蓝方部署 | include |
 | scenarios/routes_red.txt | 红方航线 | include_once |
