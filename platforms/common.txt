@@ -6,6 +6,10 @@ radar_signature fighter_rcs WSF_RADAR_SIGNATURE
    constant 0 dbsm
 end_radar_signature
 
-# Default communication network
-network default_net
-end_network
+# NOTE:
+# Do not define a top-level "network ... end_network" block here.
+# In the target AFSIM 2.9 parser this form is treated as an invalid
+# command sequence and produced:
+#   ERROR: Could not find network end_network
+# Communication transceivers are disabled during the minimal display/compile
+# pass so the parser can reach platform laydown, routes, and zones.

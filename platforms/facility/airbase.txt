@@ -5,7 +5,7 @@ platform_type AIRBASE WSF_PLATFORM
    category facility
    category AIRBASE
 
-   comm data_link WSF_COMM_TRANSCEIVER
-      network_name default_net
-   end_comm
+   # Communication is disabled for the minimal display/compile pass.
+   # Restore a validated AFSIM 2.9 transceiver/network configuration only
+   # after platforms, facilities, routes, and zones load successfully.
 end_platform_type

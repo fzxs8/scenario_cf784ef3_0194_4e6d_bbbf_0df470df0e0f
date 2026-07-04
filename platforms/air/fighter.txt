@@ -27,9 +27,9 @@ platform_type FIGHTER WSF_PLATFORM
       maximum_quantity 19842 lb
    end_fuel
 
-   comm data_link WSF_COMM_TRANSCEIVER
-      network_name default_net
-   end_comm
+   # Communication is disabled for the minimal display/compile pass.
+   # The generated top-level network blocks were not valid in AFSIM 2.9,
+   # and this scenario's source JSON does not define communications behavior.
 
    sensor radar aesa_radar
       on
