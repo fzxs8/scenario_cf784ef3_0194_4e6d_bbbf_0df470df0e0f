@@ -1,3 +1,0 @@
-radar_signature fighter_rcs WSF_RADAR_SIGNATURE
-   constant 0 dbsm
-end_radar_signature

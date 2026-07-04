@@ -33,7 +33,6 @@
 | config/simulation.txt | 仿真配置 | include_once |
 | config/output.txt | 输出配置 | include_once |
 | config/dis_interface.txt | DIS映射 | include_once |
-| platforms/common.txt | 公共定义 | include_once |
 | platforms/air/fighter.txt | 战斗机类型 | include_once |
 | platforms/facility/airbase.txt | 机场类型 | include_once |
 | sensors/aesa_radar.txt | AESA雷达 | include_once |

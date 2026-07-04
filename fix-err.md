@@ -55,6 +55,12 @@ end_radar_signature
 
 请确认实际运行目录中的 `setup.txt` 已更新，并且其中不再包含 `include_once platforms/common.txt`。
 
+## 本次第四次修正：删除 `platforms/common.txt` 文件本身
+
+目标环境连续报告同一个文件同一行错误，而当前主加载链已经不再 include 该文件。为避免任何外部启动器、索引器或旧脚本仍按文件名扫描/读取它，本次直接从仓库删除 `platforms/common.txt`，并同步从 `index.md` 移除该文件索引。
+
+现在 `fighter_rcs` 定义只存在于 `platforms/air/fighter.txt`，主加载链为：`setup.txt` -> `platforms/air/fighter.txt` / `platforms/facility/airbase.txt` / sensors / weapons。若实际运行仍报 `/home/fzxs/.../platforms/common.txt`，则说明运行目录没有更新到本次提交，或启动器读取的是另一个副本，而不是当前仓库内容。
+
 ## 本次环境限制
 
 当前容器中未发现 AFSIM/Warlock 可执行程序，因此无法在本环境直接运行 AFSIM 2.9 编译器验证完整加载链。本次修改针对用户提供的明确错误进行修复，并尽量减少 TXT 中可能被解析器误读的说明文字。
