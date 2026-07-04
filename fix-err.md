@@ -83,6 +83,16 @@ end_radar_signature
 
 当前仍暂不 include 任务脚本和武器文件，目的是先完成最小可视化：显示红蓝飞机、机场、航线和区域。
 
+## 本次第七次修正：将区域 `point` 改为闭合边界航线
+
+新的实测错误是 `scenarios/zones_red.txt` 中 `point` 值不被目标 AFSIM 2.9 接受。该解析器的 `zone/point` 语法显然不是当前自动生成的经纬度点格式。为了继续推进最小可视化，本次不再使用 `zone ... point ... end_zone`，而是把红方交战区域和蓝方防御区域改写为闭合的 `route` 边界：
+
+1. `scenarios/zones_red.txt` 现在定义 `route red_combat_zone_boundary`，按原 JSON 坐标依次连接四个角点，并回到起点闭合。
+2. `scenarios/zones_blue.txt` 现在定义 `route blue_median_line_zone_boundary`，同样按原 JSON 坐标闭合。
+3. 这样不改变区域的经纬度语义，并且可以绕开当前不可用的 `point` 区域语法，让 GUI 至少以边界线形式显示区域。
+
+后续如果需要真正的 AFSIM 区域对象，应根据目标环境的官方 `zone` 示例恢复，而不是使用本次已证实会报错的 `point <lat> <lon>` 写法。
+
 ## 本次环境限制
 
 当前容器中未发现 AFSIM/Warlock 可执行程序，因此无法在本环境直接运行 AFSIM 2.9 编译器验证完整加载链。本次修改针对用户提供的明确错误进行修复，并尽量减少 TXT 中可能被解析器误读的说明文字。

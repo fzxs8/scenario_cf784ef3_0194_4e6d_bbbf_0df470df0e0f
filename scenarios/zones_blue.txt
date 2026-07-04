@@ -1,10 +1,11 @@
-# Blue Side Zones - Defense Area
+# Blue Side Zone Boundary - Defense Area
 # Taiwan Strait 1v1 Air Combat - 2030
-# Median line defense zone
+# Represented as a closed route for minimal GUI rendering.
 
-zone blue_median_line_zone
-   point 23:00:00.00n 119:30:00.00e
-   point 26:00:00.00n 119:30:00.00e
-   point 26:00:00.00n 119:36:00.00e
-   point 23:00:00.00n 119:36:00.00e
-end_zone
+route blue_median_line_zone_boundary
+   position 23:00:00.00n 119:30:00.00e altitude 0 m msl
+   position 26:00:00.00n 119:30:00.00e altitude 0 m msl
+   position 26:00:00.00n 119:36:00.00e altitude 0 m msl
+   position 23:00:00.00n 119:36:00.00e altitude 0 m msl
+   position 23:00:00.00n 119:30:00.00e altitude 0 m msl
+end_route
