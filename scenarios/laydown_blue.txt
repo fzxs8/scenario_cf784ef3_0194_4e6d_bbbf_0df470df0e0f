@@ -5,8 +5,10 @@
 platform blue_f16v_patrol BLUE_FIGHTER
    side blue
    commander SELF
-   heading 180 deg
-   position 24:30:00.00n 119:48:00.00e altitude 10000 m msl
+   heading 270 deg
+   speed 450 knots
+   position 23:30:00.00n 120:54:00.00e altitude 0 m msl
+   route blue_patrol_route
    # strength: 1
 end_platform
 

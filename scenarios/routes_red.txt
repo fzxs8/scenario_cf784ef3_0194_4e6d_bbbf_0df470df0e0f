@@ -1,8 +1,12 @@
-# Red Side Routes - PLA Patrol
+# Red Side Route - PLA takeoff, ingress, and patrol
 # Taiwan Strait 1v1 Air Combat - 2030
-# J-20 patrol route: north-south along west side of median line
+# J-20 starts at Zhangzhou Airbase, climbs into the Taiwan Strait, then patrols north-south west of the median line.
 
 route red_patrol_route
+   position 24:48:00.00n 118:30:00.00e altitude 0 m msl
+   position 24:36:00.00n 118:54:00.00e altitude 5000 m msl
+   position 24:30:00.00n 119:12:00.00e altitude 10000 m msl
    position 24:00:00.00n 119:12:00.00e altitude 10000 m msl
    position 25:00:00.00n 119:12:00.00e altitude 10000 m msl
+   position 24:30:00.00n 119:30:00.00e altitude 10000 m msl
 end_route

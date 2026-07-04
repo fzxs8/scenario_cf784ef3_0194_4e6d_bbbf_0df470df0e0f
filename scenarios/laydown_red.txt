@@ -5,8 +5,10 @@
 platform red_j20_patrol RED_FIGHTER
    side red
    commander SELF
-   heading 0 deg
-   position 24:30:00.00n 119:12:00.00e altitude 10000 m msl
+   heading 90 deg
+   speed 450 knots
+   position 24:48:00.00n 118:30:00.00e altitude 0 m msl
+   route red_patrol_route
    # strength: 1
 end_platform
 
