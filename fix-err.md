@@ -97,10 +97,10 @@ end_radar_signature
 
 当前编译和启动已成功，但两架飞机悬停在台海不动，原因是之前的最小显示版本把飞机直接放在台海巡逻点，并且没有把平台绑定到航线。为了符合“从各自基地起飞，进入台湾海峡对抗”的预期，本次做了如下调整：
 
-1. 红方 `red_j20_patrol` 初始位置改为漳州机场，航向向东，并绑定 `route red_patrol_route`。
-2. 蓝方 `blue_f16v_patrol` 初始位置改为嘉义机场，航向向西，并绑定 `route blue_patrol_route`。
+1. 红方 `red_j20_patrol` 初始位置改为漳州机场，航向向东，并内嵌红方起飞/巡逻 route 块。
+2. 蓝方 `blue_f16v_patrol` 初始位置改为嘉义机场，航向向西，并内嵌蓝方起飞/巡逻 route 块。
 3. 红蓝航线都从各自机场 0 米高度开始，经爬升点进入台海 10000 米巡逻高度，再向台海中线附近收敛，形成对抗态势。
-4. `setup.txt` 中航线 include 已移动到平台部署 include 之前，确保平台 `route ...` 绑定时航线已经定义。
+4. `setup.txt` 中航线 include 已移动到平台部署 include 之前，同时顶层航线仍先于平台部署加载，用于 GUI 航线显示。
 
 这些修改保留 JSON 中机场、巡逻点和高度语义，同时把原来“已经悬停在巡逻点”的静态展示改为“从基地出发进入台海”的动态推演。
 
@@ -109,6 +109,12 @@ end_radar_signature
 新的实测错误是 `scenarios/laydown_red.txt` 中 `speed` 为未知命令，说明目标 AFSIM 2.9 不支持在 `platform` 块内直接写 `speed 450 knots`。本次已从红蓝飞机部署中移除该命令，保留初始位置、航向和 `route ...` 绑定，让运动由航线绑定和平台 mover 负责。
 
 如果后续仍能编译但飞机不动，下一步应根据目标环境的官方示例查找正确的航线任务/速度控制语法，而不是使用平台级 `speed`。
+
+## 本次第十次修正：将平台航线引用改为平台内嵌 route 块
+
+新的实测错误是 `route red_patrol_route` 在 `platform` 块内被解析为未知命令 `red_patrol_route`。这说明目标 AFSIM 2.9 的平台内 `route` 语法不是“引用已有 route 名称”的单行写法，而更像是无参数 `route ... end_route` 块。
+
+本次已将红蓝飞机部署中的单行 `route red_patrol_route` / `route blue_patrol_route` 改为平台内嵌 `route` 块，直接把起飞、爬升、巡逻和中线收敛航路点写入飞机平台内部。顶层 `scenarios/routes_*.txt` 仍保留，用于 GUI 显示航线边界；平台运动则使用内嵌 route 块，避免单行 route 引用触发解析错误。
 
 ## 本次环境限制
 
