@@ -45,6 +45,16 @@ end_radar_signature
 4. 如果平台、设施、航线、区域仍不显示，请继续提供下一条新的 AFSIM 报错。下一条报错所在文件就是新的阻断点。
 5. 如果实体已经显示，再逐步恢复通信、DIS 和任务脚本，不要在最小显示验证阶段恢复这些非必要模块。
 
+## 本次第三次修正：绕开 `platforms/common.txt` include
+
+如果目标环境仍然报告 `platforms/common.txt` 第 11 行存在 `network/end_network` 错误，而当前仓库中的 `platforms/common.txt` 实际只有 3 行，说明运行环境很可能仍在读取旧版本文件或缓存副本。为避免该文件继续成为阻断点，本次进一步做了结构性规避：
+
+1. 已从 `setup.txt` 删除 `include_once platforms/common.txt`。
+2. 已将 `fighter_rcs` 雷达散射截面积定义移动到 `platforms/air/fighter.txt` 顶部，在战斗机平台类型使用它之前完成定义。
+3. `platforms/common.txt` 虽保留在仓库中，但不再参与主加载链；因此即使目标环境中该文件存在旧内容，只要使用本次更新后的 `setup.txt`，AFSIM 也不会再读取它。
+
+请确认实际运行目录中的 `setup.txt` 已更新，并且其中不再包含 `include_once platforms/common.txt`。
+
 ## 本次环境限制
 
 当前容器中未发现 AFSIM/Warlock 可执行程序，因此无法在本环境直接运行 AFSIM 2.9 编译器验证完整加载链。本次修改针对用户提供的明确错误进行修复，并尽量减少 TXT 中可能被解析器误读的说明文字。

@@ -2,6 +2,10 @@
 # Taiwan Strait 1v1 Air Combat - 2030
 # Represents J-20 and F-16V class fighters
 
+radar_signature fighter_rcs WSF_RADAR_SIGNATURE
+   constant 0 dbsm
+end_radar_signature
+
 platform_type FIGHTER WSF_PLATFORM
    icon f15c
    category fighter
