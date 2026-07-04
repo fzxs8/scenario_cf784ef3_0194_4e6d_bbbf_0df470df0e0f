@@ -1,0 +1,16 @@
+[
+  {
+    "name": "红方漳州机场",
+    "type": "airport",
+    "longitude": 118.5,
+    "latitude": 24.8,
+    "side": "red"
+  },
+  {
+    "name": "蓝方嘉义机场",
+    "type": "airport",
+    "longitude": 120.9,
+    "latitude": 23.5,
+    "side": "blue"
+  }
+]

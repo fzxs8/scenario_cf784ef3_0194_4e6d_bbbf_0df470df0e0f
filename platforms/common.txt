@@ -1,0 +1,11 @@
+# Common Platform Definitions
+# Taiwan Strait 1v1 Air Combat - 2030
+
+# Radar Signature for fighter aircraft
+radar_signature fighter_rcs WSF_RADAR_SIGNATURE
+   constant 0 dbsm
+end_radar_signature
+
+# Default communication network
+network default_net
+end_network

@@ -1,0 +1,11 @@
+# Airbase Facility Platform Type
+# Taiwan Strait 1v1 Air Combat - 2030
+
+platform_type AIRBASE WSF_PLATFORM
+   category facility
+   category AIRBASE
+
+   comm data_link WSF_COMM_TRANSCEIVER
+      network_name default_net
+   end_comm
+end_platform_type

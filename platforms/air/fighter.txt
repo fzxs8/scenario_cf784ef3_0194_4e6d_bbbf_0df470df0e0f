@@ -1,0 +1,56 @@
+# Fighter Platform Type
+# Taiwan Strait 1v1 Air Combat - 2030
+# Represents J-20 and F-16V class fighters
+
+platform_type FIGHTER WSF_PLATFORM
+   icon f15c
+   category fighter
+   category AIRCRAFT
+
+   radar_signature fighter_rcs
+
+   mover WSF_AIR_MOVER
+      roll_rate_limit               1 rad/sec
+      default_linear_acceleration   1.0 g
+      default_radial_acceleration   6.5 g
+      default_climb_rate            400 fps
+      maximum_speed                 1192.0 knots
+      maximum_altitude              59000 ft
+      minimum_altitude              50 ft
+      maximum_linear_acceleration   9 g
+      at_end_of_path extrapolate
+   end_mover
+
+   fuel WSF_VARIABLE_RATE_FUEL
+      rate 7.0 lb/s
+      initial_quantity 19842 lb
+      maximum_quantity 19842 lb
+   end_fuel
+
+   comm data_link WSF_COMM_TRANSCEIVER
+      network_name default_net
+   end_comm
+
+   sensor radar aesa_radar
+      on
+   end_sensor
+
+   weapon mram MRM_AAM
+      quantity 4
+   end_weapon
+
+   processor track_manager WSF_TRACK_PROCESSOR
+      purge_interval  60 sec
+      update_interval 1 sec
+   end_processor
+end_platform_type
+
+# Red Fighter variant (J-20)
+platform_type RED_FIGHTER FIGHTER
+   icon su27
+end_platform_type
+
+# Blue Fighter variant (F-16V)
+platform_type BLUE_FIGHTER FIGHTER
+   icon f16
+end_platform_type

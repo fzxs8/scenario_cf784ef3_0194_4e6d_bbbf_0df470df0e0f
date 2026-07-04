@@ -1,0 +1,25 @@
+# Medium Range Air-to-Air Missile Weapon
+# Taiwan Strait 1v1 Air Combat - 2030
+# Model for PL-15 / AIM-120 class BVR missile
+
+weapon MRM_AAM WSF_AAM_WEAPON
+   mover WSF_AAM_MOVER
+      maximum_speed 3500 knots
+      maximum_linear_acceleration 30 g
+      maximum_range 100 km
+   end_mover
+
+   radar_signature missile_rcs
+      constant -10 dbsm
+   end_radar_signature
+
+   sensor w_sensor WSF_RADAR_SENSOR
+      ignore_same_side
+      ignore_domain surface
+      maximum_range 20 km
+   end_sensor
+
+   warhead WSF_KINETIC_WARHEAD
+      lethal_radius 10 m
+   end_warhead
+end_weapon

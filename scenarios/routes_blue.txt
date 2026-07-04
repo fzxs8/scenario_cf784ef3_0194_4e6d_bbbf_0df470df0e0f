@@ -1,0 +1,8 @@
+# Blue Side Routes - ROCAF Patrol
+# Taiwan Strait 1v1 Air Combat - 2030
+# F-16V patrol route: north-south along east side of median line
+
+route blue_patrol_route
+   position 24:00:00.00n 119:48:00.00e altitude 10000 m msl
+   position 25:00:00.00n 119:48:00.00e altitude 10000 m msl
+end_route

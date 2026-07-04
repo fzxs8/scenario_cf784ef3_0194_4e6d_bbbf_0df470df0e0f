@@ -1,0 +1,24 @@
+[
+  {
+    "name": "台海交战区域",
+    "type": "combat",
+    "side": "red",
+    "coordinates": [
+      { "longitude": 118.0, "latitude": 23.0 },
+      { "longitude": 121.5, "latitude": 23.0 },
+      { "longitude": 121.5, "latitude": 26.0 },
+      { "longitude": 118.0, "latitude": 26.0 }
+    ]
+  },
+  {
+    "name": "台海中线",
+    "type": "defense",
+    "side": "blue",
+    "coordinates": [
+      { "longitude": 119.5, "latitude": 23.0 },
+      { "longitude": 119.5, "latitude": 26.0 },
+      { "longitude": 119.6, "latitude": 26.0 },
+      { "longitude": 119.6, "latitude": 23.0 }
+    ]
+  }
+]

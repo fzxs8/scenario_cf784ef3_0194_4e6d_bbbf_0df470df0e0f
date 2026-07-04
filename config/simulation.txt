@@ -1,0 +1,6 @@
+# Simulation Configuration
+# Taiwan Strait 1v1 Air Combat - 2030
+
+end_time 4 hr
+
+random_seed 20260115

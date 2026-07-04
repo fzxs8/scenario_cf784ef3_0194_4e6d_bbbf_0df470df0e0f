@@ -1,0 +1,10 @@
+# Blue Side Zones - Defense Area
+# Taiwan Strait 1v1 Air Combat - 2030
+# Median line defense zone
+
+zone blue_median_line_zone
+   point 23:00:00.00n 119:30:00.00e
+   point 26:00:00.00n 119:30:00.00e
+   point 26:00:00.00n 119:36:00.00e
+   point 23:00:00.00n 119:36:00.00e
+end_zone

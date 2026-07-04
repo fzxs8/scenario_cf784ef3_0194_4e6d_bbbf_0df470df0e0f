@@ -1,0 +1,54 @@
+[
+  {
+    "id": "phase_1",
+    "name": "起飞与巡逻",
+    "tasks": [
+      {
+        "id": "task_1_1",
+        "name": "歼-20起飞并沿中线西侧巡逻",
+        "actions": [
+          { "id": "action_1_1_1", "name": "歼-20从漳州机场起飞", "start": 0, "end": 0.3 },
+          { "id": "action_1_1_2", "name": "歼-20抵达巡逻空域开始南北巡逻", "start": 0.3, "end": 1.0 }
+        ]
+      },
+      {
+        "id": "task_1_2",
+        "name": "F-16V起飞并沿中线东侧巡逻",
+        "actions": [
+          { "id": "action_1_2_1", "name": "F-16V从嘉义机场起飞", "start": 0, "end": 0.3 },
+          { "id": "action_1_2_2", "name": "F-16V抵达巡逻空域开始南北巡逻", "start": 0.3, "end": 1.0 }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "phase_2",
+    "name": "雷达探测与接近",
+    "tasks": [
+      {
+        "id": "task_2_1",
+        "name": "双方雷达相互探测并识别目标",
+        "actions": [
+          { "id": "action_2_1_1", "name": "歼-20机载雷达探测到蓝方目标", "start": 1.0, "end": 1.2 },
+          { "id": "action_2_1_2", "name": "F-16V机载雷达探测到红方目标", "start": 1.0, "end": 1.2 },
+          { "id": "action_2_1_3", "name": "双方相互识别并进入战术机动", "start": 1.2, "end": 1.5 }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "phase_3",
+    "name": "超视距交战",
+    "tasks": [
+      {
+        "id": "task_3_1",
+        "name": "超视距空战对抗",
+        "actions": [
+          { "id": "action_3_1_1", "name": "歼-20发射中距空空导弹", "start": 1.5, "end": 1.6 },
+          { "id": "action_3_1_2", "name": "F-16V发射中距空空导弹并机动规避", "start": 1.5, "end": 1.7 },
+          { "id": "action_3_1_3", "name": "导弹命中判定与战损评估", "start": 1.7, "end": 2.0 }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,20 @@
+# AFSIM Scenario Setup - Taiwan Strait 1v1 Air Combat
+# Project: 台海1v1空战对抗-2030
+
+file_path .
+
+# Simulation Configuration
+include_once config/simulation.txt
+include_once config/output.txt
+include_once config/dis_interface.txt
+
+# Platform Type Definitions
+include_once platforms/common.txt
+include_once platforms/air/fighter.txt
+include_once platforms/facility/airbase.txt
+
+# Sensor Definitions
+include_once sensors/aesa_radar.txt
+
+# Weapon Definitions
+include_once weapons/medium_range_aam.txt

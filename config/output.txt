@@ -1,0 +1,25 @@
+# Output Configuration
+# Taiwan Strait 1v1 Air Combat - 2030
+
+log_file output/taiwan_strait_1v1.log
+
+event_output
+   file output/taiwan_strait_1v1.evt
+   enable PLATFORM_INITIALIZED
+   enable PLATFORM_ADDED
+   enable LOCAL_TRACK_CORRELATION
+   enable LOCAL_TRACK_DECORRELATION
+   enable LOCAL_TRACK_DROPPED
+   enable LOCAL_TRACK_INITIATED
+   enable LOCAL_TRACK_UPDATED
+   enable SENSOR_TRACK_INITIATED
+   enable SENSOR_DETECTION_ATTEMPT
+   enable WEAPON_HIT
+   enable WEAPON_MISSED
+end_event_output
+
+event_pipe
+   file output/taiwan_strait_1v1.aer
+   enable AIRCOMBAT
+   enable TRACK_UPDATE
+end_event_pipe

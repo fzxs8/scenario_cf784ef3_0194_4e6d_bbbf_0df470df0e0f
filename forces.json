@@ -1,0 +1,22 @@
+[
+  {
+    "name": "红方歼-20巡逻机",
+    "side": "red",
+    "type": "战斗机",
+    "strength": 1,
+    "longitude": 119.2,
+    "latitude": 24.5,
+    "altitude": 10000,
+    "status": "台海中线西侧巡逻中"
+  },
+  {
+    "name": "蓝方F-16V巡逻机",
+    "side": "blue",
+    "type": "战斗机",
+    "strength": 1,
+    "longitude": 119.8,
+    "latitude": 24.5,
+    "altitude": 10000,
+    "status": "台海中线东侧巡逻中"
+  }
+]

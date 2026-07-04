@@ -1,0 +1,27 @@
+# Blue Side Task Assignments - ROCAF
+# Taiwan Strait 1v1 Air Combat - 2030
+
+# Phase 1: Launch and Patrol
+# F-16V takes off from Chiayi and begins patrol along the patrol route
+# Time: T+0 to T+1.0 hr
+
+# Phase 2: Radar Detection and Approach
+# F-16V detects J-20 via radar, performs tactical maneuver
+# Time: T+1.0 to T+1.5 hr
+
+platform blue_f16v_patrol
+   execute at_time 0 hr
+      # Begin patrol mission along assigned route
+      PLATFORM.FollowRoute("blue_patrol_route");
+   end_execute
+
+   execute at_time 1.0 hr
+      # Detection phase: switch to TWS mode for target tracking
+      PLATFORM.SetRadarMode("TWS");
+   end_execute
+
+   execute at_time 1.5 hr
+      # Engagement phase: engage target with MRM
+      PLATFORM.EngageClosestHostile();
+   end_execute
+end_platform

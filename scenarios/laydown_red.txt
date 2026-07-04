@@ -1,0 +1,17 @@
+# Red Side Deployment - PLA
+# Taiwan Strait 1v1 Air Combat - 2030
+# Red: J-20 fighter + Zhangzhou Airbase
+
+platform red_j20_patrol RED_FIGHTER
+   side red
+   commander SELF
+   heading 0 deg
+   position 24:30:00.00n 119:12:00.00e altitude 10000 m msl
+   # strength: 1
+end_platform
+
+platform red_zhangzhou_airbase AIRBASE
+   side red
+   commander SELF
+   position 24:48:00.00n 118:30:00.00e altitude 0 m msl
+end_platform

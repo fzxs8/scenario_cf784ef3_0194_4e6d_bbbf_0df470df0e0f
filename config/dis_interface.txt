@@ -1,0 +1,10 @@
+# DIS Interface Configuration
+# Taiwan Strait 1v1 Air Combat - 2030
+# Side mapping: red=2 (enemy), blue=1 (friendly)
+
+dis_interface
+   side_mapping
+      side red  force_id 2
+      side blue force_id 1
+   end_side_mapping
+end_dis_interface

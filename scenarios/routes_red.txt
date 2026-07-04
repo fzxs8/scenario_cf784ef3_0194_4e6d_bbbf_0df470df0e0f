@@ -1,0 +1,8 @@
+# Red Side Routes - PLA Patrol
+# Taiwan Strait 1v1 Air Combat - 2030
+# J-20 patrol route: north-south along west side of median line
+
+route red_patrol_route
+   position 24:00:00.00n 119:12:00.00e altitude 10000 m msl
+   position 25:00:00.00n 119:12:00.00e altitude 10000 m msl
+end_route

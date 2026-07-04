@@ -1,0 +1,20 @@
+[
+  {
+    "name": "红方歼-20巡逻航线",
+    "side": "red",
+    "type": "巡逻",
+    "waypoints": [
+      { "longitude": 119.2, "latitude": 24.0, "height": 10000 },
+      { "longitude": 119.2, "latitude": 25.0, "height": 10000 }
+    ]
+  },
+  {
+    "name": "蓝方F-16V巡逻航线",
+    "side": "blue",
+    "type": "巡逻",
+    "waypoints": [
+      { "longitude": 119.8, "latitude": 24.0, "height": 10000 },
+      { "longitude": 119.8, "latitude": 25.0, "height": 10000 }
+    ]
+  }
+]

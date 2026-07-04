@@ -1,0 +1,10 @@
+# Red Side Zones - Combat Area
+# Taiwan Strait 1v1 Air Combat - 2030
+# Taiwan Strait engagement zone
+
+zone red_combat_zone
+   point 23:00:00.00n 118:00:00.00e
+   point 23:00:00.00n 121:30:00.00e
+   point 26:00:00.00n 121:30:00.00e
+   point 26:00:00.00n 118:00:00.00e
+end_zone

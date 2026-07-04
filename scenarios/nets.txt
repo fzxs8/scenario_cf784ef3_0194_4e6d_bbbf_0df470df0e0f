@@ -1,0 +1,8 @@
+# Communication Networks
+# Taiwan Strait 1v1 Air Combat - 2030
+
+network default_net
+end_network
+
+network weapons_subnet
+end_network
