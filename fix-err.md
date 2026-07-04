@@ -71,6 +71,18 @@ end_radar_signature
 
 注意：`phases.json` 中仍有“发射中距空空导弹”的阶段语义，后续应使用目标 AFSIM 2.9 实际支持的 `WSF_EXPLICIT_WEAPON` / `WSF_IMPLICIT_WEAPON` 或现场插件模型重新实现；但在最小显示验证阶段，不应让武器模型阻断平台、设施、航线和区域显示。
 
+## 本次第六次修正：把部署、航线和区域纳入 `setup.txt`
+
+当前已经没有解析错误，但 GUI 仍为空，最可能的原因是实际启动时只加载了 `setup.txt`，而旧结构中 `setup.txt` 只包含配置和类型定义，真正创建实体的 `scenarios/laydown_*.txt`、航线 `routes_*.txt` 和区域 `zones_*.txt` 只在 `scenario.txt` 中 include。如果启动器入口选成 `setup.txt`，就会“无错误但没有任何实体”。
+
+本次将主加载链调整为：
+
+1. `setup.txt` 负责加载配置、平台类型、传感器、红蓝部署、航线、区域和空的网络占位文件。
+2. `scenario.txt` 只保留 `include setup.txt`，避免同一批平台/航线/区域被重复 include。
+3. 这样无论 AFSIM 启动器入口选择 `scenario.txt` 还是 `setup.txt`，都能读到设施、平台、航线和区域。
+
+当前仍暂不 include 任务脚本和武器文件，目的是先完成最小可视化：显示红蓝飞机、机场、航线和区域。
+
 ## 本次环境限制
 
 当前容器中未发现 AFSIM/Warlock 可执行程序，因此无法在本环境直接运行 AFSIM 2.9 编译器验证完整加载链。本次修改针对用户提供的明确错误进行修复，并尽量减少 TXT 中可能被解析器误读的说明文字。

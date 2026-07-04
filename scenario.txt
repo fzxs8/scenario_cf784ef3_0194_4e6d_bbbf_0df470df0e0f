@@ -2,22 +2,3 @@
 # Project: 台海1v1空战对抗-2030
 
 include setup.txt
-
-# Scenario Deployment
-include scenarios/laydown_red.txt
-include scenarios/laydown_blue.txt
-
-# Routes
-include_once scenarios/routes_red.txt
-include_once scenarios/routes_blue.txt
-
-# Zones
-include_once scenarios/zones_red.txt
-include_once scenarios/zones_blue.txt
-
-# Communication Networks
-include_once scenarios/nets.txt
-
-# Task Assignments
-include_once processors/assignments_red.txt
-include_once processors/assignments_blue.txt

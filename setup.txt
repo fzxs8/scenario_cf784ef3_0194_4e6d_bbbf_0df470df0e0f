@@ -14,3 +14,18 @@ include_once platforms/facility/airbase.txt
 
 # Sensor Definitions
 include_once sensors/aesa_radar.txt
+
+# Scenario Deployment
+include_once scenarios/laydown_red.txt
+include_once scenarios/laydown_blue.txt
+
+# Routes
+include_once scenarios/routes_red.txt
+include_once scenarios/routes_blue.txt
+
+# Zones
+include_once scenarios/zones_red.txt
+include_once scenarios/zones_blue.txt
+
+# Communication Networks (currently empty/minimal)
+include_once scenarios/nets.txt
